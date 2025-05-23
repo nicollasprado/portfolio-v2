@@ -13,6 +13,8 @@
   --color-my-yellow: #dec63e;
   --color-my-purple-subtitle: #c2bada;
   --color-my-purple-bg: #190f25;
+  --color-my-purple-info-title: #a17bd5;
+  --color-my-purple-text: #d6c2f0;
 }
 
 @media (prefers-color-scheme: dark) {
