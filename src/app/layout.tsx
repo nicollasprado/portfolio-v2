@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Exo_2 } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
+const exo2 = Exo_2({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
@@ -18,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={`${poppins.className} antialiased`}>{children}</body>
+      <body className={`${exo2.className} antialiased bg-my-purple-bg`}>
+        {children}
+      </body>
     </html>
   );
 }
