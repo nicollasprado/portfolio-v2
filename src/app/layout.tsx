@@ -18,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={`${exo2.className} antialiased bg-my-purple-bg`}>
+      <body
+        className={`${exo2.className} antialiased bg-my-purple-bg h-[100dvh]`}
+      >
         {children}
       </body>
     </html>

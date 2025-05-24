@@ -1,27 +1,68 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useState } from "react";
+import { Code, User } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import Home from "./components/Home";
+
+export default function Main() {
+  const [selectedPage, setSelectedPage] = useState("home");
+
   return (
-    <div>
-      <div className="flex gap-8">
-        <div className="relative w-full max-w-[25rem] aspect-[1/1] shadow-2xl">
-          <Image
-            src={"/PhotoMe.png"}
-            alt="Foto de mim mesmo"
-            fill
-            className="object-contain"
-          />
-        </div>
+    <div className="flex flex-col items-center h-full">
+      <nav className="flex gap-15 mt-5">
+        <ol className="flex gap-10 text-foreground font-semibold text-xl">
+          <li>
+            <button
+              type="button"
+              className={`cursor-pointer flex items-center gap-2 ${
+                selectedPage === "home" && "text-sky-200"
+              }`}
+              onClick={() => setSelectedPage("home")}
+            >
+              <User /> Sobre
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              className={`cursor-pointer flex items-center gap-2 ${
+                selectedPage === "projects" && "text-sky-200"
+              }`}
+              onClick={() => setSelectedPage("projects")}
+            >
+              <Code /> Projetos
+            </button>
+          </li>
+        </ol>
+      </nav>
 
-        <section className="flex flex-col gap-4">
-          <h1 className="text-my-yellow font-extrabold text-6xl">
-            NICOLLAS PRADO
-          </h1>
-          <h3 className="text-my-purple-subtitle font-semibold text-3xl">
-            Desenvolvedor de Software
-          </h3>
-        </section>
-      </div>
+      <AnimatePresence>
+        {selectedPage === "home" && (
+          <motion.div
+            key={selectedPage}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="h-full"
+          >
+            {selectedPage === "home" && <Home />}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* xl:flex
+          <div className="hidden flex-col justify-start">
+            <h2 className="text-my-purple-info-title font-medium text-3xl">
+              Projetos
+            </h2>
+            <ProjectCard
+              title="Minervaguess"
+              description="Site de palpites em tempo real de partidas de League of Legends."
+              githubUrl="a"
+              technologies={["Next.js", "Typescript", "Postgres", "Redis"]}
+            />
+          </div> */}
     </div>
   );
 }
