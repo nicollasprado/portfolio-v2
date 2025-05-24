@@ -7,7 +7,7 @@ export default function Languages() {
 
       <ol className="flex flex-col gap-2">
         <li className="text-my-purple-text text-xl font-medium">
-          🇺🇸 Inglês Fluente
+          🇺🇸 Inglês Avançado
         </li>
         <li className="text-my-purple-text text-xl font-medium">
           🇧🇷 Português Nativo

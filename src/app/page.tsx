@@ -4,9 +4,14 @@ import { useState } from "react";
 import { Code, User } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import Home from "./components/Home";
+import { useWindowSize } from "usehooks-ts";
+import HomeMobile from "./components/Mobile/HomeMobile";
 
 export default function Main() {
   const [selectedPage, setSelectedPage] = useState("home");
+  const { width } = useWindowSize();
+
+  const isMobile = width <= 1024;
 
   return (
     <div className="flex flex-col items-center h-full">
@@ -46,23 +51,10 @@ export default function Main() {
             transition={{ duration: 0.3 }}
             className="h-full"
           >
-            {selectedPage === "home" && <Home />}
+            {selectedPage === "home" && isMobile ? <HomeMobile /> : <Home />}
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* xl:flex
-          <div className="hidden flex-col justify-start">
-            <h2 className="text-my-purple-info-title font-medium text-3xl">
-              Projetos
-            </h2>
-            <ProjectCard
-              title="Minervaguess"
-              description="Site de palpites em tempo real de partidas de League of Legends."
-              githubUrl="a"
-              technologies={["Next.js", "Typescript", "Postgres", "Redis"]}
-            />
-          </div> */}
     </div>
   );
 }
