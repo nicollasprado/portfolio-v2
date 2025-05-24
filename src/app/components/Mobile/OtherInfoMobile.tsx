@@ -2,7 +2,7 @@ import TextInfoMobile from "./TextInfoMobile";
 
 export default function OtherInfoMobile() {
   return (
-    <ol className="flex flex-col gap-8">
+    <ol className="flex flex-col gap-8 mb-10">
       <li>
         <TextInfoMobile
           title="Experiência"
