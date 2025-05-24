@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import Home from "./components/Home";
 import { useWindowSize } from "usehooks-ts";
 import HomeMobile from "./components/Mobile/HomeMobile";
+import ProjectsPage from "./components/ProjectsPage";
 
 export default function Main() {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -43,17 +44,23 @@ export default function Main() {
       </nav>
 
       <AnimatePresence>
-        {selectedPage === "home" && (
-          <motion.div
-            key={selectedPage}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="h-full"
-          >
-            {selectedPage === "home" && isMobile ? <HomeMobile /> : <Home />}
-          </motion.div>
-        )}
+        <motion.div
+          key={selectedPage}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="h-full"
+        >
+          {selectedPage === "home" ? (
+            isMobile ? (
+              <HomeMobile />
+            ) : (
+              <Home />
+            )
+          ) : null}
+
+          {selectedPage === "projects" && <ProjectsPage />}
+        </motion.div>
       </AnimatePresence>
     </div>
   );
