@@ -15,6 +15,9 @@
   --color-my-purple-bg: #190f25;
   --color-my-purple-info-title: #a17bd5;
   --color-my-purple-text: #d6c2f0;
+  --color-project-card-bg: #4b1e77;
+  --color-project-card-tech-bg: #5c39ae;
+  --color-project-card-tech-text: #f2ff8e;
 }
 
 @media (prefers-color-scheme: dark) {
