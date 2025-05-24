@@ -15,33 +15,35 @@ export default function Main() {
   const isMobile = width <= 1024;
 
   return (
-    <div className="flex flex-col items-center h-full">
-      <nav className="flex gap-15 mt-5">
-        <ol className="flex gap-10 text-foreground font-semibold text-xl">
-          <li>
-            <button
-              type="button"
-              className={`cursor-pointer flex items-center gap-2 ${
-                selectedPage === "home" && "text-sky-200"
-              }`}
-              onClick={() => setSelectedPage("home")}
-            >
-              <User /> Sobre
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              className={`cursor-pointer flex items-center gap-2 ${
-                selectedPage === "projects" && "text-sky-200"
-              }`}
-              onClick={() => setSelectedPage("projects")}
-            >
-              <Code /> Projetos
-            </button>
-          </li>
-        </ol>
-      </nav>
+    <div className="flex flex-col items-center h-full xl:gap-0 gap-10">
+      <header>
+        <nav className="flex gap-15 mt-5">
+          <ol className="flex gap-10 text-foreground font-semibold xl:text-xl text-2xl">
+            <li>
+              <button
+                type="button"
+                className={`cursor-pointer flex items-center gap-2 ${
+                  selectedPage === "home" && "text-sky-200"
+                }`}
+                onClick={() => setSelectedPage("home")}
+              >
+                <User /> Sobre
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className={`cursor-pointer flex items-center gap-2 ${
+                  selectedPage === "projects" && "text-sky-200"
+                }`}
+                onClick={() => setSelectedPage("projects")}
+              >
+                <Code /> Projetos
+              </button>
+            </li>
+          </ol>
+        </nav>
+      </header>
 
       <AnimatePresence>
         <motion.div
