@@ -7,10 +7,10 @@ export default function LanguagesMobile() {
 
       <ol className="flex gap-8">
         <li className="text-my-purple-text text-lg font-medium">
-          🇺🇸 Inglês Avançado
+          🇺🇸 EN Avançado
         </li>
         <li className="text-my-purple-text text-lg font-medium">
-          🇧🇷 Português Nativo
+          🇧🇷 PT-BR Nativo
         </li>
       </ol>
     </div>
