@@ -16,7 +16,7 @@ export default function ProjectsPage() {
 
         <li>
           <ProjectCard
-            title="Minervaguess"
+            title="API E-Commerce"
             githubUrl="https://github.com/nicollasprado/ecommerce_API"
             technologies={["Java", "Springboot", "Postgres"]}
             description="Api com as principais funcionalidades de um e-commerce."
