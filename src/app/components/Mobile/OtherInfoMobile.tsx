@@ -6,7 +6,7 @@ export default function OtherInfoMobile() {
       <li>
         <TextInfoMobile
           title="Experiência"
-          description="1 mês trabalhando como bolsista no ITNC - IFRN, desenvolvendo aplicações web."
+          description="Estágiario na DIPEQ - IFRN desenvolvendo aplicações web."
         />
       </li>
       <li>
